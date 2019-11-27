@@ -1,10 +1,11 @@
-package com.mgbachi_ugo.swoosh
+package com.mgbachi_ugo.swoosh.controller
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import com.mgbachi_ugo.swoosh.R
+import com.mgbachi_ugo.swoosh.Utilities.EXTRA_LEAGUE
 import kotlinx.android.synthetic.main.activity_league.*
 
 class LeagueActivity : BaseActivity() {
@@ -32,8 +33,8 @@ class LeagueActivity : BaseActivity() {
 
     fun leagueNxtclick(view: View) {
         if (selectedLeague != "") {
-            val skillActivity = Intent(this,SkillActivity::class.java)
-            skillActivity.putExtra(EXTRA_PLAYER, selectedLeague)
+            val skillActivity = Intent(this, SkillActivity::class.java)
+            skillActivity.putExtra(EXTRA_LEAGUE, selectedLeague)
             startActivity(skillActivity)
         } else {
             Toast.makeText(this, "Please select a league", Toast.LENGTH_SHORT).show()
